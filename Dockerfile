@@ -21,12 +21,12 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     docker-php-ext-configure intl && \
     docker-php-ext-install -j$(nproc) gd ldap oci8 intl pdo mbstring zip pcntl bcmath soap pgsql gmp exif mysqli tokenizer
 
-    pecl install -o -f redis && docker-php-ext-enable
-    pecl install xdebug && docker-php-ext-enable xdebug
-    pecl install amqp && docker-php-ext-enable amqp
-    pecl install mongodb && docker-php-ext-enable mongodb
-    pecl install imagick && docker-php-ext-enable imagick
-    pecl install sqlsrv pdo_sqlsrv && docker-php-ext-enable sqlsrv pdo_sqlsrv
+RUN pecl install -o -f redis && docker-php-ext-enable
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN pecl install amqp && docker-php-ext-enable amqp
+RUN pecl install mongodb && docker-php-ext-enable mongodb
+RUN pecl install imagick && docker-php-ext-enable imagick
+RUN pecl install sqlsrv pdo_sqlsrv && docker-php-ext-enable sqlsrv pdo_sqlsrv
 
 
 RUN cd /tmp && git clone https://github.com/git-ftp/git-ftp.git && cd git-ftp \
