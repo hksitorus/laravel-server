@@ -27,7 +27,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     docker-php-ext-configure intl && \
     docker-php-ext-install -j$(nproc) gd ldap oci8 intl pdo mbstring zip pcntl bcmath soap gmp exif mysqli tokenizer
 
-RUN pecl install -o -f redis && docker-php-ext-enable
+RUN pecl install -o -f redis && docker-php-ext-enable redis
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 RUN pecl install amqp && docker-php-ext-enable amqp
 RUN pecl install mongodb && docker-php-ext-enable mongodb
