@@ -7,7 +7,7 @@ RUN apt-get install -y apt-transport-https gnupg && \
     apt-get update -yqq && \
     ACCEPT_EULA=Y apt-get install -y unixodbc unixodbc-dev libgss3 odbcinst msodbcsql locales && \
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen && \
-    apt-get install -y nano openssl zip unzip git wget libfreetype6-dev libjpeg62-turbo-dev libpng-dev libldb-dev libldap2-dev libaio-dev supervisor librabbitmq-dev libgmp-dev zlib1g-dev libicu-dev g++ libmagickwand-dev imagemagick
+    apt-get install -y nano openssl zip unzip libzip-dev git wget libfreetype6-dev libjpeg62-turbo-dev libpng-dev libldb-dev libldap2-dev libaio-dev supervisor librabbitmq-dev libgmp-dev zlib1g-dev libicu-dev g++ libmagickwand-dev imagemagick
     
 
 ADD oracle/instantclient-basic-linux.x64-11.2.0.4.0.zip /tmp/instantclient-basic-linux.x64-11.2.0.4.0.zip
