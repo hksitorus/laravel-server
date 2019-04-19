@@ -1,5 +1,8 @@
 FROM php:7.3.4-apache-stretch
 
+ENV ORACLE_HOME=/usr/local/instantclient
+ENV LD_LIBRARY_PATH=/usr/local/instantclient
+
 RUN apt-get update -y
 RUN apt-get install -y apt-transport-https gnupg && \
     curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
