@@ -8,7 +8,7 @@ RUN apt-get install -y apt-transport-https gnupg && \
     curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     curl https://packages.microsoft.com/config/debian/8/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
     apt-get update -yqq && \
-    ACCEPT_EULA=Y apt-get install -y unixodbc unixodbc-dev libgss3 odbcinst msodbcsql locales && \
+    ACCEPT_EULA=Y apt-get install -y unixodbc unixodbc-dev libgss3 odbcinst msodbcsql17 locales && \
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen && \
     apt-get install -y nano openssl zip unzip libzip-dev git wget libfreetype6-dev libjpeg62-turbo-dev libpng-dev libldb-dev libldap2-dev libaio-dev supervisor librabbitmq-dev libgmp-dev zlib1g-dev libicu-dev g++ libmagickwand-dev imagemagick
     
