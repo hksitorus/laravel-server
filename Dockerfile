@@ -28,7 +28,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
     docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
     docker-php-ext-configure oci8 --with-oci8=instantclient,/usr/local/instantclient && \
     docker-php-ext-configure intl && \
-    docker-php-ext-install -j$(nproc) gd ldap oci8 intl pdo mbstring zip pcntl bcmath soap gmp exif mysqli tokenizer
+    docker-php-ext-install -j$(nproc) gd ldap oci8 intl pdo mbstring zip pcntl bcmath soap gmp exif mysqli pdo_mysql tokenizer
 
 RUN pecl install -o -f redis && docker-php-ext-enable redis
 RUN pecl install xdebug && docker-php-ext-enable xdebug
